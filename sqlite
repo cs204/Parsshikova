@@ -1,0 +1,27 @@
+Create Table track (
+album CHAR(10),
+posn INTEGER,
+song VARCHAR(255),
+PRIMARY KEY(album, disk, posn)); 
+
+
+INSERT INTO track (album, disk, posn, song) VALUES ('test', 1,2, 'test song');
+
+SELECT *FROM track
+
+
+Create Table albums (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+title VARCHAR(255),
+description TEXT,
+  `year` YEAR
+);
+
+Create Table songs(
+ title VARCHAR(255),
+ duration INT(3),
+ album_id INTEGER(11), 
+  FOREIGN KEY (album_id) REFERENCES albums(id) 
+
+)
+
